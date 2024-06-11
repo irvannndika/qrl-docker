@@ -13,12 +13,14 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-
-job:
-    build:
-      env:
-        TC_CLOUD_TOKEN: aj_tcc_svc_aep9Gr2G0P4YohKxV2DfPutBHwpK24lwdF17O-XlzxwzZ
-      steps:
-       - name: Prepare Testcontainers Cloud agent
-         uses: atomicjar/testcontainers-cloud-setup-action@main
+  
+jobs:
+ build:
+   runs-on: ubuntu
+   steps:
+    - uses: actions/checkout@v3
+      with:
+        token: aj_tcc_svc_aep9Gr2G0P4YohKxV2DfPutBHwpK24lwdF17O-XlzxwzZ
+    - name: Prepare Testcontainers Cloud agent
+      uses: atomicjar/testcontainers-cloud-setup-action@main
+        
