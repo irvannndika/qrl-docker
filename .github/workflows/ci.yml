@@ -19,11 +19,10 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-     - uses: actions/checkout@v4
-     - name: Setup Testcontainers Cloud Client
-       uses: atomicjar/testcontainers-cloud-setup-action@v1
-       with:
-           token: aj_tcc_svc_aep9Gr2G0P4YohKxV2DfPutBHwpK24lwdF17O-XlzxwzZ
+  env:
+    TC_CLOUD_TOKEN: $
+  steps:
+    - name: Prepare Testcontainers Cloud agent
+      if: env.TC_CLOUD_TOKEN != ' aj_tcc_svc_aep9Gr2G0P4YohKxV2DfPutBHwpK24lwdF17O-XlzxwzZ'
+      uses: atomicjar/testcontainers-cloud-setup-action@main
+    # ... existing steps go here (checkout, run tests, 
