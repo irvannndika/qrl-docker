@@ -22,9 +22,8 @@ jobs:
 
    build:
       env:
-        TC_CLOUD_TOKEN: $
+        TC_CLOUD_TOKEN: aj_tcc_svc_aep9Gr2G0P4YohKxV2DfPutBHwpK24lwdF17O-XlzxwzZ
   steps:
     - name: Prepare Testcontainers Cloud agent
-      if: env.TC_CLOUD_TOKEN != ' aj_tcc_svc_aep9Gr2G0P4YohKxV2DfPutBHwpK24lwdF17O-XlzxwzZ'
       uses: atomicjar/testcontainers-cloud-setup-action@main
     # ... existing steps go here (checkout, run tests, 
