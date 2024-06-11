@@ -17,10 +17,6 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-   build:
       env:
         TC_CLOUD_TOKEN: aj_tcc_svc_aep9Gr2G0P4YohKxV2DfPutBHwpK24lwdF17O-XlzxwzZ
   steps:
