@@ -15,9 +15,10 @@ on:
 
   
 jobs:
- build:
-   runs-on: ubuntu
-   steps:
+   build:
+    
+    runs-on: ubuntu-latest
+    steps:
     - uses: actions/checkout@v3
       with:
         token: aj_tcc_svc_aep9Gr2G0P4YohKxV2DfPutBHwpK24lwdF17O-XlzxwzZ
