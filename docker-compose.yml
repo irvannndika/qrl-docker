@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+ qrl:
+  restart: on-failure
+  image: kprimice/docker-qrl:0.15a
+  container_name: docker-qrl
+  volumes:
+  - "/etc/localtime:/etc/localtime:ro"
+  - "./data:/data"
