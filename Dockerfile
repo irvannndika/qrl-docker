@@ -1,14 +1,13 @@
 FROM ubuntu:latest
 
 RUN apt-get update
-RUN apt-get install -y python-dev python-pip git
+RUN sudo apt update && sudo apt upgrade -y
+
+RUN sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev cmake libleveldb-dev
+RUN pip3 install -U setuptools
+
+RUN pip3 install service-identity==21.1.0
+RUN pip3 install -U qrl
 
 
-RUN pip install --upgrade pip
-RUN git clone https://github.com/theQRL/QRL /QRL
-RUN pip install -r /QRL/requirements.txt
-
-VOLUME /QRL /data
-WORKDIR /data
-
-CMD ["/usr/bin/python", "/QRL/main.py"] 
+CMD ["/usr/bin/python3", "install -U qrl"] 
